@@ -16,18 +16,19 @@ namespace CounrtriesRateServer.Controllers
             _ratesService = ratesService;
         }
 
-        [HttpGet("{cityName}")]
+        [HttpGet("rate/{cityName}")]
         public async Task<string> GetRateByCity(string cityName)
         {
             return  await _ratesService.GetRateByCity(cityName);
         }
         
-        [HttpGet("{cityName}")]
+        [HttpGet("country/{cityName}")]
         public async Task<string> GetCountryByCity(string cityName)
         {
             return  await _ratesService.GetCountryByCity(cityName);
         }
 
+        [HttpGet()]
         public async Task<IEnumerable<string>> GetRates()
         {
             return await _ratesService.GetRates();
