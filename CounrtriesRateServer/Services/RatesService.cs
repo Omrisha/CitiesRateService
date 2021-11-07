@@ -29,8 +29,8 @@ namespace CounrtriesRateServer.Services
                 {
                     var serializedRates = await ratesResponse.Content.ReadAsStringAsync();
                     var rates = JsonConvert.DeserializeObject<CountryToRateWrapper>(serializedRates);
-                    
-                    return rates?.data.Select(r => r.currency);
+
+                    return rates?.data.GroupBy(rate => rate.currency).Select(r => r.FirstOrDefault().currency);
                 }
                 else
                 {

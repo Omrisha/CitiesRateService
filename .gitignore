@@ -33,3 +33,7 @@
 /CounrtriesRateServer/obj/rider.project.restore.info
 /.idea/.idea.CounrtriesRateServer/.idea/riderModule.iml
 /.idea/.idea.CounrtriesRateServer/.idea/vcs.xml
+*.exe
+*.cs
+*.cache
+*.editorconfig
